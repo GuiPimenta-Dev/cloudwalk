@@ -35,7 +35,7 @@ class ProdStack(cdk.Stack):
             pipeline_name=f"{context.stage}-{context.name}-Pipeline",
         )
 
-        steps = Steps(self, context.staging, source)
+        steps = Steps(self, context, source)
 
         generate_docs = steps.generate_docs()
 
