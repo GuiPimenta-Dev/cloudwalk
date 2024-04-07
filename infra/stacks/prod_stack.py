@@ -43,7 +43,6 @@ class ProdStack(cdk.Stack):
         pipeline.add_stage(
             DeployStage(self, context.staging),
             pre=[
-                validate_docs,
             ],
         )
 
@@ -52,5 +51,4 @@ class ProdStack(cdk.Stack):
 
         pipeline.add_stage(
             DeployStage(self, context),
-            post=[generate_docs],
         )

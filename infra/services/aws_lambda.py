@@ -19,6 +19,7 @@ class AWSLambda(IAWSLambda):
         timeout=1,
         layers=[],
         environment={},
+        runtime=Runtime.PYTHON_3_9,
     ):
 
         function = Function(
@@ -26,7 +27,7 @@ class AWSLambda(IAWSLambda):
             id=name,
             description=description,
             function_name=f"{self.context.stage}-{self.context.name}-{name}",
-            runtime=Runtime.PYTHON_3_9,
+            runtime=runtime,
             handler=Path.handler(directory),
             environment=environment,
             code=Code.from_asset(path=Path.function(path)),
