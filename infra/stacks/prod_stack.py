@@ -37,18 +37,9 @@ class ProdStack(cdk.Stack):
 
         steps = Steps(self, context.staging, source)
 
-        # pre
-        validate_docs = steps.validate_docs()
-
-        pipeline.add_stage(
-            DeployStage(self, context.staging),
-            pre=[
-            ],
-        )
-
-        # post
         generate_docs = steps.generate_docs()
 
         pipeline.add_stage(
             DeployStage(self, context),
+            post=[generate_docs],
         )

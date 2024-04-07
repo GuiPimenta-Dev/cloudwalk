@@ -1,5 +1,4 @@
-from functions.quake.node_log_parser.config import NodeLogParserConfig
-from functions.quake.python_log_parser.config import LogParserConfig
+from functions.quake.log_parser.config import LogParserConfig
 from aws_cdk import Stack
 from constructs import Construct
 from infra.services import Services
@@ -15,5 +14,4 @@ class LambdaStack(Stack):
         self.services = Services(self, context)
 
         # Quake
-        NodeLogParserConfig(self.services)
         LogParserConfig(self.services)
