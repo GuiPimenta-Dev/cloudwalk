@@ -1,7 +1,7 @@
 import json
 from dataclasses import dataclass
 from . import quake_parser
-from typing import List, Dict
+from typing import List
 
 @dataclass
 class Input:
@@ -17,15 +17,15 @@ class History:
 class Game:
     total_kills: int
     players: List[str]
-    kills: Dict[str, int]
+    kills: dict
     ranking: List[str]
     history: List[History]
-    kills_by_means: Dict[str, int]  
+    kills_by_means: dict
+
 
 @dataclass
 class Output:
-    data: Dict[str, Game]
-
+    id: Game
 
 def lambda_handler(event, context):
     matches = quake_parser.QuakeParser().games
@@ -43,5 +43,5 @@ def lambda_handler(event, context):
 
     return {
         "statusCode": 200,
-        "body": json.dumps({"data": games})
+        "body": json.dumps(games)
     }
