@@ -1,14 +1,30 @@
 import json
 from dataclasses import dataclass
 import quake_parser
+from typing import List, Dict
 
 @dataclass
 class Input:
     pass
 
 @dataclass
+class History:
+    killer: str
+    murdered: str
+    weapon: str
+
+@dataclass
+class Game:
+    total_kills: int
+    players: List[str]
+    kills: Dict[str, int]
+    ranking: List[str]
+    history: List[History]
+    kills_by_means: Dict[str, int]  
+
+@dataclass
 class Output:
-    message: str
+    data: Dict[str, Game]
 
 
 def lambda_handler(event, context):
