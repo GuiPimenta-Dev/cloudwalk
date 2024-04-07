@@ -10,6 +10,5 @@ class DeployStage(cdk.Stage):
 
         lambda_stack = LambdaStack(self, context)
         
-        lambda_stack.services.api_gateway.create_docs(authorizer=None, endpoint="/docs/swagger")
+        lambda_stack.services.api_gateway.create_docs(authorizer=None)
 
-        lambda_stack.services.api_gateway.create_docs(authorizer=None, redoc=True, endpoint="/docs/redoc")

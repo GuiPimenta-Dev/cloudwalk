@@ -1,6 +1,6 @@
 import json
 from dataclasses import dataclass
-import quake_parser
+from . import quake_parser
 from typing import List, Dict
 
 @dataclass
