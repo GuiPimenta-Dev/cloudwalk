@@ -10,7 +10,7 @@ The Python version of the case leverages **Lambda Forge**, a custom framework me
 
 Lambda Forge orchestrates a customizable CI/CD Pipeline on AWS CodePipeline, triggered automatically every time code is pushed to this repository. This pipeline includes pre-deployment unit testing, followed by integration testing, and finally Swagger documentation generation post-deployment.
 
-![alt text](image.png)
+![alt text](pipeline.png)
 
 The source code for the Lambda function resides within `functions/log_parser`.
 
