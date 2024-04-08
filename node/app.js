@@ -1,14 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const QuakeParser = require("./quake"); // Assuming QuakeParser.js is in the same directory
+const QuakeParser = require("./quake");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Parse JSON bodies
 app.use(bodyParser.json());
 
-// Define your API route
 app.get("/games", (req, res) => {
   try {
     const matches = new QuakeParser().games;
@@ -35,7 +33,6 @@ app.get("/games", (req, res) => {
   }
 });
 
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
