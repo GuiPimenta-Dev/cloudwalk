@@ -1,4 +1,4 @@
-from functions.quake.log_parser.config import LogParserConfig
+from functions.log_parser.config import LogParserConfig
 from aws_cdk import Stack
 from constructs import Construct
 from infra.services import Services
