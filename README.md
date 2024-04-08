@@ -47,7 +47,7 @@ pytest -k "unit" .
 For integration tests:
 
 ```
-pytest -k "integration"
+pytest -k "integration" .
 ```
 
 ## Node.js Implementation
