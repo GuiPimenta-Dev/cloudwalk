@@ -36,10 +36,12 @@ class ProdStack(cdk.Stack):
         )
 
         steps = Steps(self, context, source)
-
+        unit_tests = steps.unit_tests()
+        integration_tests = steps.integration_tests()
         generate_docs = steps.generate_docs()
 
         pipeline.add_stage(
             DeployStage(self, context),
-            post=[generate_docs],
+            pre=[unit_tests],
+            post=[generate_docs, integration_tests],
         )

@@ -7,7 +7,7 @@ class QuakeParser:
         self.games = self.parse_games()
 
     def load_log(self):
-        log_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "quake.log")
+        log_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "quake.txt")
         with open(log_path, "r") as file:
             return file.readlines()
 

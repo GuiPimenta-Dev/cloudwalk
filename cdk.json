@@ -47,7 +47,7 @@
         },
         "bucket": "gui-docs",
         "coverage": 80,
-        "base_url": "",
+        "base_url": "https://dl60eatoa5.execute-api.us-east-2.amazonaws.com/prod",
         "dev": {
             "arns": {}
         },
